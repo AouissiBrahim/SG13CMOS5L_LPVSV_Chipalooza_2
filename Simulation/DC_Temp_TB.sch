@@ -76,7 +76,6 @@ C {vsource.sym} -1030 -150 0 0 {name=Vin value=1.2
 C {lab_pin.sym} -540 -160 0 1 {name=p6 sig_type=std_logic lab=F_Rst}
 C {isource.sym} -1320 -110 0 0 {name=I0 value=1u}
 C {lab_pin.sym} -1320 -210 2 0 {name=p12 sig_type=std_logic lab=VDD}
-C {/foss/designs/LPSVS/LPVSV.sym} -650 -140 0 0 {name=x1}
 C {simulator_commands_shown.sym} -1780 -640 0 0 {
 name=Libs_Ngspice
 simulator=ngspice
@@ -114,3 +113,4 @@ C {devices/launcher.sym} -1710 -70 0 0 {name=h5
 descr="load waves Ctrl + left click" 
 tclcommand="xschem raw_read $netlist_dir/DC_Temp_TB.raw dc"
 }
+C {/foss/designs/LPVSV_Chipalooza_2/xschem/LPVSV.sym} -650 -140 0 0 {name=x2}

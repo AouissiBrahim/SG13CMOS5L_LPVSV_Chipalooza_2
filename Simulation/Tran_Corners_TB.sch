@@ -6,30 +6,30 @@ S {}
 F {}
 E {}
 N -1270 -790 -1270 -770 {lab=VDD}
-N -970 -710 -970 -690 {lab=I_Bais}
+N -970 -710 -970 -690 {lab=#net1}
 N -970 -790 -970 -770 {lab=VDD}
 N -1270 -710 -1270 -690 {lab=0}
 N -1270 -620 -1270 -600 {lab=VCORE}
 N -1270 -540 -1270 -520 {lab=0}
 N -1110 -790 -1110 -770 {lab=VSS}
 N -1110 -710 -1110 -690 {lab=0}
+N -970 -630 -970 -590 {lab=I_Bais}
 C {simulator_commands_shown.sym} -2000 -850 0 0 {
 name=Libs_Ngspice
 simulator=ngspice
 only_toplevel=false
 value="
-.lib cornerMOSlv.lib mos_ss
+.lib cornerMOSlv.lib mos_ff
 .lib cornerMOShv.lib mos_ss
 .include sg13cmos5l_stdcell.spice
 "
       }
-C {/foss/designs/LPSVS/LPVSV.sym} -1010 -230 0 0 {name=x1}
 C {isource.sym} -970 -740 0 0 {name=I0 value=\{IBais\}}
 C {vsource.sym} -1270 -740 0 0 {name=V1 value=\{VDD\} savecurrent=false}
 C {lab_pin.sym} -1270 -790 0 0 {name=p1 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} -970 -790 0 0 {name=p2 sig_type=std_logic lab=VDD}
 C {gnd.sym} -1270 -690 0 0 {name=l2 lab=0}
-C {lab_pin.sym} -970 -690 0 0 {name=p3 sig_type=std_logic lab=I_Bais}
+C {lab_pin.sym} -970 -590 0 0 {name=p3 sig_type=std_logic lab=I_Bais}
 C {lab_pin.sym} -1030 -330 0 1 {name=p4 sig_type=std_logic lab=I_Bais}
 C {lab_pin.sym} -1100 -330 0 1 {name=p5 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} -1270 -620 0 0 {name=p6 sig_type=std_logic lab=VCORE}
@@ -39,7 +39,9 @@ C {lab_pin.sym} -950 -280 2 0 {name=p8 sig_type=std_logic lab=RST}
 C {lab_pin.sym} -950 -250 2 0 {name=p9 sig_type=std_logic lab=F_RST}
 C {code_shown.sym} -1990 -709.0983898104131 0 0 {name=s1 only_toplevel=false 
 value="
-.options temp = 125
+.options 
+
+.options temp = -40
 .include Tran_Corners_TB.save
 .param VDD = 3.3
 .param IBais = 1u
@@ -49,7 +51,7 @@ value="
 alterparam VDD=3.6 
 alterparam IBais = 1.02u
 reset
-tran 0.4u 27m
+tran 0.45u 16m
 
 	meas tran T_H when F_RST = 0.4 rise=1
 	meas tran VTH_H(V) FIND VCORE AT=T_H
@@ -68,7 +70,7 @@ tran 0.4u 27m
 alterparam VDD=2.7 
 alterparam IBais = 0.98u
 reset
-tran 0.4u 27m
+tran 0.45u 16m
 
 	meas tran T_H when F_RST = 0.4 rise=1
 	meas tran VTH_H(V) FIND VCORE AT=T_H
@@ -106,9 +108,11 @@ write Tran_Corners_TB.raw
 .endc
 "
 }
-C {vsource.sym} -1270 -570 0 0 {name=V2 value="pulse(0 1.3 1m 5m 5m 15m 26m)" savecurrent=false
+C {vsource.sym} -1270 -570 0 0 {name=V2 value="pulse(0 1.3 1m 2m 2m 10m 15m)" savecurrent=false
 }
 C {vsource.sym} -1110 -740 0 0 {name=V3 value=0 savecurrent=false}
 C {lab_pin.sym} -1110 -790 0 0 {name=p14 sig_type=std_logic lab=VSS}
 C {gnd.sym} -1110 -690 0 0 {name=l1 lab=0}
 C {lab_pin.sym} -1040 -190 0 1 {name=p10 sig_type=std_logic lab=VSS}
+C {ammeter.sym} -970 -660 0 0 {name=Vmeas savecurrent=true spice_ignore=0}
+C {/foss/designs/LPVSV_Chipalooza_2/xschem/LPVSV.sym} -1010 -230 0 0 {name=x1}
