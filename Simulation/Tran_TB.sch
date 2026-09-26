@@ -60,8 +60,8 @@ name=Libs_Ngspice
 simulator=ngspice
 only_toplevel=false
 value="
-.lib cornerMOSlv.lib mos_ss
-.lib cornerMOShv.lib mos_ss
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
 .lib cornerRES.lib res_typ
 .include sg13cmos5l_stdcell.spice
 "
@@ -86,13 +86,13 @@ C {lab_pin.sym} -1000 -340 2 0 {name=p9 sig_type=std_logic lab=F_RST
 spice_ignore=true}
 C {code_shown.sym} -1740 -700 0 0 {name=s1 only_toplevel=false 
 value="
-.options temp = -40
+.options temp = 27
 .param VDD = 3.3
 .param I_Bais = 1u
 .include Tran_TB.save
 .save all
 .control
-	tran 0.5u 9m
+	tran 0.05u 9m
 
 meas tran T_H when F_RST = 0.4 rise=1
 meas tran VTH_H(V) FIND VCORE AT=T_H
@@ -156,7 +156,7 @@ savecurrent=false
 }
 C {ammeter.sym} -970 -680 0 0 {name=Vmeas savecurrent=true spice_ignore=0}
 C {/foss/designs/LPVSV_Chipalooza_2/Layout/LPVSV_Pex.sym} -1280 -1180 0 0 {name=X2
-}
+spice_ignore=true}
 C {simulator_commands_shown.sym} -1750 -1010 0 0 {
 name=Libs_Ngspice1
 simulator=ngspice
@@ -164,20 +164,36 @@ only_toplevel=false
 value="
 .include /foss/designs/LPVSV_Chipalooza_2/Layout/LPVSV_Pex.gds.spice
 "
-      }
+      spice_ignore=true}
 C {/foss/designs/LPVSV_Chipalooza_2/xschem/LPVSV.sym} -1060 -320 0 0 {name=x1
 spice_ignore=true}
 C {lab_pin.sym} -1300 -1050 0 0 {name=p11 sig_type=std_logic lab=VSS
-}
+spice_ignore=true}
 C {lab_pin.sym} -1300 -1170 0 0 {name=p12 sig_type=std_logic lab=VDD
-}
+spice_ignore=true}
 C {lab_pin.sym} -1300 -1130 2 1 {name=p13 sig_type=std_logic lab=VCORE
-}
+spice_ignore=true}
 C {lab_pin.sym} -1300 -1150 0 0 {name=p15 sig_type=std_logic lab=I_Bais
-}
+spice_ignore=true}
 C {lab_pin.sym} -1300 -1070 2 1 {name=p16 sig_type=std_logic lab=RST
-}
+spice_ignore=true}
 C {lab_pin.sym} -1300 -1090 2 1 {name=p17 sig_type=std_logic lab=F_RST
-}
+spice_ignore=true}
 C {lab_pin.sym} -1300 -1110 2 1 {name=p18 sig_type=std_logic lab=VTH
+spice_ignore=true}
+C {/foss/designs/LPVSV_Chipalooza_2/LVS/LVS_Sch/LPVSV_Pex.sym} -730 -1080 0 0 {name=x3
+}
+C {lab_pin.sym} -580 -1140 2 0 {name=p19 sig_type=std_logic lab=VDD
+}
+C {lab_pin.sym} -580 -1120 0 1 {name=p20 sig_type=std_logic lab=VCORE
+}
+C {lab_pin.sym} -580 -1100 0 1 {name=p21 sig_type=std_logic lab=I_Bais
+}
+C {lab_pin.sym} -580 -1020 0 1 {name=p22 sig_type=std_logic lab=VSS
+}
+C {lab_pin.sym} -580 -1060 0 1 {name=p23 sig_type=std_logic lab=Rst
+}
+C {lab_pin.sym} -580 -1080 0 1 {name=p24 sig_type=std_logic lab=F_Rst
+}
+C {lab_pin.sym} -580 -1040 0 1 {name=p25 sig_type=std_logic lab=VTH
 }

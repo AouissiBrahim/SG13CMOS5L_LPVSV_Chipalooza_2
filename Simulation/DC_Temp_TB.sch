@@ -29,12 +29,15 @@ VCORE"}
 N -1030 -210 -1030 -180 {lab=VCORE}
 N -1110 -210 -1110 -180 {lab=VDD}
 N -1210 -210 -1210 -180 {lab=VSS}
-N -590 -190 -540 -190 {lab=Rst}
-N -590 -160 -540 -160 {lab=F_Rst}
+N -590 -190 -540 -190 {lab=Rst
+}
+N -590 -160 -540 -160 {lab=F_Rst
+}
 N -1320 -210 -1320 -140 {lab=VDD}
 N -1320 -80 -1320 -60 {lab=I_B}
 C {code_shown.sym} -1790 -469.0983898104131 0 0 {name=s2 only_toplevel=false 
 value="
+.options gmin = 1e-12
 .include DC_Temp_TB.save
 .save all
 .control
@@ -52,7 +55,8 @@ savecurrent=false
 }
 C {lab_pin.sym} -1110 -210 0 0 {name=p16 sig_type=std_logic lab=VDD}
 C {gnd.sym} -1110 -120 0 0 {name=l6 lab=GND}
-C {lab_pin.sym} -540 -190 0 1 {name=p7 sig_type=std_logic lab=Rst}
+C {lab_pin.sym} -540 -190 0 1 {name=p7 sig_type=std_logic lab=Rst
+}
 C {code.sym} -1790 -260 0 0 {name=NGSPICE only_toplevel=true 
 value="
 .options rshunt = 1e15
@@ -62,18 +66,23 @@ value="
 "
            
 }
-C {lab_pin.sym} -740 -240 1 0 {name=p1 sig_type=std_logic lab=VDD}
-C {lab_pin.sym} -820 -170 0 0 {name=p2 sig_type=std_logic lab=VCORE}
-C {lab_pin.sym} -670 -240 1 0 {name=p3 sig_type=std_logic lab=I_B}
+C {lab_pin.sym} -740 -240 1 0 {name=p1 sig_type=std_logic lab=VDD
+}
+C {lab_pin.sym} -820 -170 0 0 {name=p2 sig_type=std_logic lab=VCORE
+}
+C {lab_pin.sym} -670 -240 1 0 {name=p3 sig_type=std_logic lab=I_B
+}
 C {vsource.sym} -1210 -150 0 0 {name=VSS value=0
 savecurrent=false
 }
 C {lab_pin.sym} -1210 -210 0 0 {name=p4 sig_type=std_logic lab=VSS}
 C {gnd.sym} -1210 -120 0 0 {name=l1 lab=GND}
-C {lab_pin.sym} -680 -100 3 0 {name=p5 sig_type=std_logic lab=VSS}
+C {lab_pin.sym} -680 -100 3 0 {name=p5 sig_type=std_logic lab=VSS
+}
 C {vsource.sym} -1030 -150 0 0 {name=Vin value=1.2
 }
-C {lab_pin.sym} -540 -160 0 1 {name=p6 sig_type=std_logic lab=F_Rst}
+C {lab_pin.sym} -540 -160 0 1 {name=p6 sig_type=std_logic lab=F_Rst
+}
 C {isource.sym} -1320 -110 0 0 {name=I0 value=1u}
 C {lab_pin.sym} -1320 -210 2 0 {name=p12 sig_type=std_logic lab=VDD}
 C {simulator_commands_shown.sym} -1780 -640 0 0 {
@@ -113,4 +122,5 @@ C {devices/launcher.sym} -1710 -70 0 0 {name=h5
 descr="load waves Ctrl + left click" 
 tclcommand="xschem raw_read $netlist_dir/DC_Temp_TB.raw dc"
 }
-C {/foss/designs/LPVSV_Chipalooza_2/xschem/LPVSV.sym} -650 -140 0 0 {name=x2}
+C {/foss/designs/LPVSV_Chipalooza_2/xschem/LPVSV.sym} -650 -140 0 0 {name=x2
+}
