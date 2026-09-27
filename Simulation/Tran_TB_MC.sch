@@ -16,20 +16,20 @@ C {vsource.sym} -1280 -810 0 0 {name=V1 value=3.3 savecurrent=false}
 C {lab_pin.sym} -1280 -860 0 0 {name=p1 sig_type=std_logic lab=VDD}
 C {gnd.sym} -1280 -760 0 0 {name=l2 lab=0}
 C {lab_pin.sym} -1120 -400 0 1 {name=p4 sig_type=std_logic lab=I_Bais
-}
+spice_ignore=true}
 C {lab_pin.sym} -1190 -400 0 1 {name=p5 sig_type=std_logic lab=VDD
-}
+spice_ignore=true}
 C {vsource.sym} -1230 -570 0 0 {name=V2 value="pulse(0 1.2 0.1m 1m 1m 3m 5.1m)" savecurrent=false
 }
 C {lab_pin.sym} -1230 -660 0 0 {name=p6 sig_type=std_logic lab=VCORE}
 C {gnd.sym} -1230 -540 0 0 {name=l3 lab=0}
 C {lab_pin.sym} -1270 -330 0 0 {name=p7 sig_type=std_logic lab=VCORE
-}
-C {ammeter.sym} -1100 -260 3 1 {name=Vmeas savecurrent=true }
+spice_ignore=true}
+C {ammeter.sym} -1100 -260 3 1 {name=Vmeas savecurrent=true spice_ignore=true}
 C {lab_pin.sym} -1040 -350 2 0 {name=p8 sig_type=std_logic lab=RST
-}
+spice_ignore=true}
 C {lab_pin.sym} -1040 -320 2 0 {name=p9 sig_type=std_logic lab=F_RST
-}
+spice_ignore=true}
 C {simulator_commands_shown.sym} -920 -750 0 0 {
 name=Libs_Ngspice1
 simulator=ngspice
@@ -133,22 +133,20 @@ C {vsource.sym} -990 -810 0 0 {name=V3 value=0 savecurrent=false}
 C {lab_pin.sym} -990 -860 0 0 {name=p10 sig_type=std_logic lab=VSS}
 C {gnd.sym} -990 -760 0 0 {name=l1 lab=0}
 C {lab_pin.sym} -1070 -260 0 1 {name=p14 sig_type=std_logic lab=VSS
-}
-C {lab_pin.sym} -890 -90 0 0 {name=p11 sig_type=std_logic lab=VSS
-spice_ignore=true}
-C {lab_pin.sym} -890 -210 0 0 {name=p12 sig_type=std_logic lab=VDD
-spice_ignore=true}
-C {lab_pin.sym} -890 -170 2 1 {name=p13 sig_type=std_logic lab=VCORE
-spice_ignore=true}
-C {lab_pin.sym} -890 -190 0 0 {name=p15 sig_type=std_logic lab=I_Bais
-spice_ignore=true}
-C {lab_pin.sym} -890 -110 2 1 {name=p16 sig_type=std_logic lab=RST
-spice_ignore=true}
-C {/foss/designs/LPVSV_Chipalooza_2/Layout/LPVSV_Pex.sym} -870 -220 0 0 {name=X2
-spice_ignore=true}
-C {lab_pin.sym} -890 -130 2 1 {name=p17 sig_type=std_logic lab=F_RST
-spice_ignore=true}
-C {lab_pin.sym} -890 -150 2 1 {name=p18 sig_type=std_logic lab=VTH
 spice_ignore=true}
 C {/foss/designs/LPVSV_Chipalooza_2/xschem/LPVSV.sym} -1100 -300 0 0 {name=x1
+spice_ignore=true}
+C {lab_pin.sym} -910 -80 0 0 {name=p11 sig_type=std_logic lab=VSS
+}
+C {lab_pin.sym} -910 -180 0 0 {name=p12 sig_type=std_logic lab=VDD
+}
+C {lab_pin.sym} -910 -120 2 1 {name=p13 sig_type=std_logic lab=VCORE
+}
+C {lab_pin.sym} -910 -100 0 0 {name=p15 sig_type=std_logic lab=I_Bais
+}
+C {lab_pin.sym} -910 -160 2 1 {name=p16 sig_type=std_logic lab=RST
+}
+C {/foss/designs/LPVSV_Chipalooza_2/Layout/LPVSV.sym} -890 -190 0 0 {name=X2
+}
+C {lab_pin.sym} -910 -140 2 1 {name=p17 sig_type=std_logic lab=F_RST
 }

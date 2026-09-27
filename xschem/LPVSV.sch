@@ -40,7 +40,6 @@ N -1420 100 -1420 130 {lab=#net2}
 N -1240 90 -1200 90 {lab=F_RST}
 N -1240 50 -1240 90 {lab=F_RST}
 N -1200 90 -1200 140 {lab=F_RST}
-N -2020 -130 -1660 -130 {lab=VDD}
 N -2340 -130 -2340 10 {lab=VDD}
 N -2300 10 -2300 50 {lab=#net3}
 N -2340 50 -2300 50 {lab=#net3}
@@ -52,15 +51,12 @@ N -2250 -50 -2250 10 {lab=#net3}
 N -2500 160 -2460 160 {lab=I_Bais}
 N -2500 160 -2500 170 {lab=I_Bais}
 N -2340 -130 -2150 -130 {lab=VDD}
-N -1660 310 -1420 310 {lab=VSS}
 N -2500 200 -2500 310 {lab=VSS}
 N -1420 -70 -1420 20 {lab=VCORE}
-N -1830 -70 -1420 -70 {lab=VCORE}
 N -1480 20 -1460 20 {lab=#net1}
 N -1660 -130 -1660 10 {lab=VDD}
 N -1480 90 -1480 160 {lab=#net1}
 N -2340 310 -2150 310 {lab=VSS}
-N -1240 310 -1050 310 {lab=VSS}
 N -1420 -70 -1240 -70 {lab=VCORE}
 N -1080 140 -980 140 {lab=F_RST}
 N -1050 280 -1050 310 {lab=VSS}
@@ -70,7 +66,6 @@ N -980 160 -960 160 {lab=F_RST}
 N -980 140 -980 160 {lab=F_RST}
 N -1950 310 -1660 310 {lab=VSS}
 N -2250 10 -2190 10 {lab=#net3}
-N -2020 -50 -1700 -50 {lab=#net3}
 N -1700 -50 -1700 10 {lab=#net3}
 N -1830 60 -1800 60 {lab=VCORE}
 N -1830 -70 -1830 60 {lab=VCORE}
@@ -104,13 +99,14 @@ N -1690 270 -1200 270 {lab=F_RST}
 N -2150 60 -2150 160 {lab=VTH}
 N -1950 60 -1950 160 {lab=VTH}
 N -2150 60 -1950 60 {lab=VTH}
+N -1240 310 -1050 310 {lab=VSS}
+N -2250 -50 -1700 -50 {lab=#net3}
 N -1610 90 -1480 90 {lab=#net1}
+N -1830 -70 -1420 -70 {lab=VCORE}
+N -1660 310 -1420 310 {lab=VSS}
+N -2150 -130 -1660 -130 {lab=VDD}
 N -2500 310 -2340 310 {lab=VSS}
 N -2460 200 -2380 200 {lab=I_Bais}
-N -2020 -130 -2020 -90 {lab=VDD}
-N -2150 -130 -2020 -130 {lab=VDD}
-N -2020 -60 -2020 -50 {lab=#net3}
-N -2250 -50 -2020 -50 {lab=#net3}
 C {iopin.sym} -1700 -130 3 0 {name=p1 lab=VDD}
 C {iopin.sym} -1240 -70 3 0 {name=p2 lab=VCORE}
 C {iopin.sym} -840 180 0 0 {name=p3 lab=RESET}
@@ -211,13 +207,4 @@ only_toplevel=false
 value="
 .include \\"/foss/pdks/ihp-sg13cmos5l/libs.ref/sg13cmos5l_stdcell/cdl/sg13cmos5l_stdcell.cdl\\"
 "
-      spice_ignore=true}
-C {iopin.sym} -1980 -90 2 1 {name=p7 lab=EN}
-C {sg13g2_pr/sg13_hv_pmos.sym} -2000 -90 0 1 {name=M11
-l=1u
-w=5u
-ng=1
-m=1
-model=sg13_hv_pmos
-spiceprefix=X
-}
+      }
