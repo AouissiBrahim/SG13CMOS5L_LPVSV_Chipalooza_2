@@ -10,6 +10,8 @@ Low-Power Voltage Supervisor (LPSVS) for 1.2 V core supply monitoring, integrati
    
 The ***LPVSV*** assert the ***RESET*** during startup until the ***1V2*** reaches its normal value and remain stable for a predefine delay. During normal operation, if the ***1V2*** drops below the brown out threshold due to an ***LDO*** failure, overload or supply disturbance, the ***LPVSV*** immediately deasserts the  ***RESET*** to protect the digital core.
 
+![](Docs/LPVSV.png)
+
    
 **Target Specifications**  
    

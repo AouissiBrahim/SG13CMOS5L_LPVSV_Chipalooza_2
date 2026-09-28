@@ -3,7 +3,7 @@
  <description>Main DRC Run Report at</description>
  <original-file />
  <generator>drc: script='/foss/pdks/ihp-sg13cmos5l/libs.tech/klayout/tech/drc/ihp-sg13cmos5l.drc'</generator>
- <top-cell>LPVSV</top-cell>
+ <top-cell>sg13cmos5l_AouissiBrahim_LPVSV_POR</top-cell>
  <tags>
  </tags>
  <categories>
@@ -3430,7 +3430,7 @@
  </categories>
  <cells>
   <cell>
-   <name>LPVSV</name>
+   <name>sg13cmos5l_AouissiBrahim_LPVSV_POR</name>
    <variant />
    <layout-name />
    <references>
