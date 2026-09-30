@@ -29,8 +29,6 @@ f_rst"
 legend=1
 x1=0}
 N -1330 -810 -1330 -790 {lab=VDD}
-N -1030 -730 -1030 -710 {lab=I_Bais}
-N -1030 -810 -1030 -790 {lab=VDD}
 N -1330 -730 -1330 -710 {lab=0}
 N -1680 -430 -1680 -410 {lab=VCORE}
 N -1680 -350 -1680 -330 {lab=0}
@@ -38,6 +36,16 @@ N -1170 -490 -1170 -480 {lab=VSS
 spice_ignore=true}
 N -1170 -810 -1170 -790 {lab=VSS}
 N -1170 -730 -1170 -710 {lab=0}
+N -340 -350 -340 -290 {lab=VDD}
+N -300 -290 -260 -290 {lab=#net1}
+N -220 -350 -220 -290 {lab=VDD}
+N -340 -350 -220 -350 {lab=VDD}
+N -340 -390 -340 -350 {lab=VDD}
+N -340 -250 -340 -230 {lab=#net1}
+N -340 -170 -340 -150 {lab=GND}
+N -300 -290 -300 -250 {lab=#net1}
+N -340 -250 -300 -250 {lab=#net1}
+N -340 -260 -340 -250 {lab=#net1}
 C {simulator_commands_shown.sym} -1740 -780 0 0 {
 name=Libs_Ngspice
 simulator=ngspice
@@ -48,12 +56,9 @@ value="
 .include sg13cmos5l_stdcell.spice
 "
       }
-C {isource.sym} -1030 -760 0 0 {name=I0 value=1u}
 C {vsource.sym} -1330 -760 0 0 {name=V1 value=3.3 savecurrent=false}
 C {lab_pin.sym} -1330 -810 0 0 {name=p1 sig_type=std_logic lab=VDD}
-C {lab_pin.sym} -1030 -810 0 0 {name=p2 sig_type=std_logic lab=VDD}
 C {gnd.sym} -1330 -710 0 0 {name=l2 lab=0}
-C {lab_pin.sym} -1030 -710 0 0 {name=p3 sig_type=std_logic lab=I_Bais}
 C {lab_pin.sym} -1160 -630 0 1 {name=p4 sig_type=std_logic lab=I_Bais
 spice_ignore=true}
 C {lab_pin.sym} -1230 -630 0 1 {name=p5 sig_type=std_logic lab=VDD
@@ -109,4 +114,27 @@ C {lab_pin.sym} -840 -250 2 1 {name=p16 sig_type=std_logic lab=RST
 C {/foss/designs/LPVSV_Chipalooza_2/Layout/LPVSV.sym} -820 -280 0 0 {name=X2
 }
 C {lab_pin.sym} -840 -230 2 1 {name=p17 sig_type=std_logic lab=F_RST
+}
+C {isource.sym} -340 -200 0 0 {name=I1 value=1u}
+C {lab_pin.sym} -340 -390 2 0 {name=p18 sig_type=std_logic lab=VDD}
+C {sg13cmos5l_pr/sg13_hv_pmos.sym} -320 -290 0 1 {name=M1
+l=2u
+w=1u
+ ng=1
+ m=1
+  mm_ok=1
+ model=sg13_hv_pmos
+spiceprefix=X
+}
+C {sg13cmos5l_pr/sg13_hv_pmos.sym} -240 -290 0 0 {name=M2
+l=2u
+w=1u
+ ng=1
+ m=1
+  mm_ok=1
+ model=sg13_hv_pmos
+spiceprefix=X
+}
+C {gnd.sym} -340 -150 0 0 {name=l4 lab=GND}
+C {lab_pin.sym} -220 -260 3 0 {name=p19 sig_type=std_logic lab=I_Bais
 }
