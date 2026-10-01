@@ -28,7 +28,7 @@ value="
 
 dc Vin 1.3 0 -0.01
 	plot RST VCORE title 'From Heigh to Low'	
-	plot EN I_Bais
+	plot i(vss)
 	meas dc VL when RST =0.2
 	meas dc IQL max i(vss)
 dc Vin 0 1.3 0.01

@@ -120,7 +120,7 @@ C {code_shown.sym} -1440 -460 0 0 {name=MC_SETTINGS
 only_toplevel=false
 value="
 **nr_workers=1
-**nr_mc_sims=10
+**nr_mc_sims=500
 
 **results_plot_begin
 **VTH_H 
