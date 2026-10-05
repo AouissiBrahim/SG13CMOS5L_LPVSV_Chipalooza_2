@@ -43,6 +43,9 @@ The ***LPVSV*** assert the ***RESET*** during startup until the ***1V2*** reac
 | **STD**       | 0.0154 | 0.0155 | 4.31  | 0.0194 | 0.0146 |
 | **±3segma %** | 0.0462 | 0.0465 | 12.93 | 0.0582 | 0.0438 |
 
+![](Docs/Pre_Layout_Simu_DC_1.png)
+![](Docs/Pre_Layout_Simu_DC_2.png)
+
 **PVT Corners:**
 **Temperature = -40/125, VDD = 2.7/3.6V, I\_Bais = 0.98/1.02uA**
 
@@ -71,6 +74,7 @@ The ***LPVSV*** assert the ***RESET*** during startup until the ***1V2*** reac
 | **STD**       | 0.0159 | 0.0156 | 2.04 | 0.0988 |
 | **±3segma %** | 0.0477 | 0.0468 | 6.12 | 0.296  |
 
+![](Docs/Pre_Layout_Simu_Tran.png)
 
 **PVT Corners:**
 **Temperature = -40/125, VDD = 2.7/3.6V, I\_Bais = 0.98/1.02uA**
@@ -100,6 +104,9 @@ The ***LPVSV*** assert the ***RESET*** during startup until the ***1V2*** reac
 | **STD**       | 0.0155 | 0.0153 | 2.98  | 0.0202 | 0.0153 |
 | **±3segma %** | 0.0465 | 0.0459 | 8.94  | 0.0606 | 0.0459 |
 
+![](Docs/Post_Layout_Simu_DC_1.png)
+![](Docs/Post_Layout_Simu_DC_2.png)
+
 **PVT Corners:**
 **Temperature = -40/125, VDD = 2.7/3.6V, I\_Bais = 0.98/1.02uA**
 
@@ -128,6 +135,7 @@ The ***LPVSV*** assert the ***RESET*** during startup until the ***1V2*** reac
 | **STD**       | 0.0155 | 0.0153 | 1.54 | 0.143  |
 | **±3segma %** | 0.0465 | 0.0459 | 4.62 | 0.429  |
 
+![](Docs/Post_Layout_Simu_Tran.png)
 
 **PVT Corners:**
 **Temperature = -40/125, VDD = 2.7/3.6V, I\_Bais = 0.98/1.02uA**
