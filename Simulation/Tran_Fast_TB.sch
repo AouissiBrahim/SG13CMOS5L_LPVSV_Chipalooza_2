@@ -22,18 +22,17 @@ hilight_wave=-1
 y2=1.3
 y1=-5.3194444e-09
 sim_type=tran
-color="4 5 12"
+color="4 5"
 node="rst
-vcore
-f_rst"
+vcore"
 legend=1
 x1=0}
 N -1330 -810 -1330 -790 {lab=VDD}
 N -1330 -730 -1330 -710 {lab=0}
-N -1680 -430 -1680 -410 {lab=VCORE}
-N -1680 -350 -1680 -330 {lab=0}
+N -1680 -340 -1680 -320 {lab=VCORE}
+N -1680 -260 -1680 -240 {lab=0}
 N -1170 -490 -1170 -480 {lab=VSS
-spice_ignore=true}
+}
 N -1170 -810 -1170 -790 {lab=VSS}
 N -1170 -730 -1170 -710 {lab=0}
 N -340 -350 -340 -290 {lab=VDD}
@@ -56,28 +55,33 @@ value="
 .include sg13cmos5l_stdcell.spice
 "
       }
-C {vsource.sym} -1330 -760 0 0 {name=V1 value=3.3 savecurrent=false}
+C {vsource.sym} -1330 -760 0 0 {name=V1 value=\{VDD\} savecurrent=false}
 C {lab_pin.sym} -1330 -810 0 0 {name=p1 sig_type=std_logic lab=VDD}
 C {gnd.sym} -1330 -710 0 0 {name=l2 lab=0}
 C {lab_pin.sym} -1160 -630 0 1 {name=p4 sig_type=std_logic lab=I_Bais
-spice_ignore=true}
+}
 C {lab_pin.sym} -1230 -630 0 1 {name=p5 sig_type=std_logic lab=VDD
-spice_ignore=true}
-C {lab_pin.sym} -1680 -430 0 0 {name=p6 sig_type=std_logic lab=VCORE}
-C {gnd.sym} -1680 -330 0 0 {name=l3 lab=0}
+}
+C {lab_pin.sym} -1680 -340 0 0 {name=p6 sig_type=std_logic lab=VCORE}
+C {gnd.sym} -1680 -240 0 0 {name=l3 lab=0
+}
 C {lab_pin.sym} -1310 -560 0 0 {name=p7 sig_type=std_logic lab=VCORE
-spice_ignore=true}
+}
 C {lab_pin.sym} -1080 -580 2 0 {name=p8 sig_type=std_logic lab=RST
-spice_ignore=true}
+}
 C {lab_pin.sym} -1080 -550 2 0 {name=p9 sig_type=std_logic lab=F_RST
-spice_ignore=true}
+}
 C {code_shown.sym} -1740 -650 0 0 {name=s1 only_toplevel=false 
 value="
-
+.options temp = 27
+.param VDD = 3.3
+.param I_Bais = 1u
+.param t1 = t2-5n
+.param t2 = 400n
 .include Tran_TB_MC.save
 .save all
 .control
-	tran 1n 2.2u
+	tran 10n 2.2u
 	plot vcore rst
 write Tran_Fast_TB.raw
 .endc
@@ -87,35 +91,32 @@ C {vsource.sym} -1170 -760 0 0 {name=V3 value=0 savecurrent=false}
 C {lab_pin.sym} -1170 -810 0 0 {name=p14 sig_type=std_logic lab=VSS}
 C {gnd.sym} -1170 -710 0 0 {name=l1 lab=0}
 C {lab_pin.sym} -1170 -480 0 1 {name=p10 sig_type=std_logic lab=VSS
-spice_ignore=true}
-C {/foss/designs/LPVSV_Chipalooza_2/xschem/LPVSV.sym} -1140 -530 0 0 {name=x1
-spice_ignore=true}
-C {vsource.sym} -1680 -380 0 0 {name=Vin4 value="pwl(0 1.2 100n 1.2 105n 0.6 195n 0.6 200n 1.2 300n 1.2 305n 0.6 495n 0.6 500n 1.2 600n 1.2 605n 0.6 895n 0.6 900n 1.2 1u 1.2 1.005u 0.6 1.395u 0.6 1.4u 1.2 1.5u 1.2 1.505u 0.6 1.995u 0.6 2u 1.2 2.1u 1.2 2.105u 0.6)"
-savecurrent=false
 }
-C {simulator_commands_shown.sym} -1690 -220 0 0 {
+C {/foss/designs/LPVSV_Chipalooza_2/xschem/LPVSV.sym} -1140 -530 0 0 {name=x1
+}
+C {simulator_commands_shown.sym} -1720 -120 0 0 {
 name=Libs_Ngspice1
 simulator=ngspice
 only_toplevel=false
 value="
 .include /foss/designs/LPVSV_Chipalooza_2/Layout/LPVSV_Pex.gds.spice
 "
-      }
-C {lab_pin.sym} -840 -170 0 0 {name=p11 sig_type=std_logic lab=VSS
-}
-C {lab_pin.sym} -840 -270 0 0 {name=p12 sig_type=std_logic lab=VDD
-}
-C {lab_pin.sym} -840 -210 2 1 {name=p13 sig_type=std_logic lab=VCORE
-}
-C {lab_pin.sym} -840 -190 0 0 {name=p15 sig_type=std_logic lab=I_Bais
-}
-C {lab_pin.sym} -840 -250 2 1 {name=p16 sig_type=std_logic lab=RST
-}
-C {/foss/designs/LPVSV_Chipalooza_2/Layout/LPVSV.sym} -820 -280 0 0 {name=X2
-}
-C {lab_pin.sym} -840 -230 2 1 {name=p17 sig_type=std_logic lab=F_RST
-}
-C {isource.sym} -340 -200 0 0 {name=I1 value=1u}
+      spice_ignore=true}
+C {lab_pin.sym} -920 -70 0 0 {name=p11 sig_type=std_logic lab=VSS
+spice_ignore=true}
+C {lab_pin.sym} -920 -170 0 0 {name=p12 sig_type=std_logic lab=VDD
+spice_ignore=true}
+C {lab_pin.sym} -920 -110 2 1 {name=p13 sig_type=std_logic lab=VCORE
+spice_ignore=true}
+C {lab_pin.sym} -920 -90 0 0 {name=p15 sig_type=std_logic lab=I_Bais
+spice_ignore=true}
+C {lab_pin.sym} -920 -150 2 1 {name=p16 sig_type=std_logic lab=RST
+spice_ignore=true}
+C {/foss/designs/LPVSV_Chipalooza_2/Layout/LPVSV.sym} -900 -180 0 0 {name=X2
+spice_ignore=true}
+C {lab_pin.sym} -920 -130 2 1 {name=p17 sig_type=std_logic lab=F_RST
+spice_ignore=true}
+C {isource.sym} -340 -200 0 0 {name=I1 value=\{I_Bais\}}
 C {lab_pin.sym} -340 -390 2 0 {name=p18 sig_type=std_logic lab=VDD}
 C {sg13cmos5l_pr/sg13_hv_pmos.sym} -320 -290 0 1 {name=M1
 l=2u
@@ -137,4 +138,7 @@ spiceprefix=X
 }
 C {gnd.sym} -340 -150 0 0 {name=l4 lab=GND}
 C {lab_pin.sym} -220 -260 3 0 {name=p19 sig_type=std_logic lab=I_Bais
+}
+C {vsource.sym} -1680 -290 0 0 {name=Vin1 value="pwl(0 1.2 100n 1.2 105n 0.6 \{t1\} 0.6 \{t2\} 1.2 2u 1.2)"
+savecurrent=false
 }
