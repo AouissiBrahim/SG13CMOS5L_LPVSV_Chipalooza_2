@@ -34,7 +34,7 @@ The ***LPVSV*** assert the ***RESET*** during startup until the ***1V2*** reac
 **DC Tests:**  
 **Monte Carlo 1000 runs:**
 
-|  | VTH\_H (V) | VTH\_L (V) | Hes (mV) | IQ_ON(uA) | IQ_OFF(uA) |
+|  | VTH\_H (V) | VTH\_L (V) | Hes (mV) | IQ\_ON (uA) | IQ\_OFF (uA) |
 | :-: | :-: | :-: | :-: | :-: | :-: |
 | **Mean** | 1.08 | 1.01 | 64.3 | 6.34 | 5.01 |
 | **Min** | 1.03 | 0.968 | 51.4 | 6.29 | 4.97 |
