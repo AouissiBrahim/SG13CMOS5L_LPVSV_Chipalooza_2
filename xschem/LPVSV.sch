@@ -91,23 +91,23 @@ N -2150 60 -1950 60 {lab=VTH}
 N -2520 310 -2500 310 {lab=VSS}
 N -2340 -130 -2340 10 {lab=VDD}
 N -2460 160 -2460 200 {lab=I_Bais}
-N -2460 200 -2380 200 {lab=I_Bais}
 N -2340 50 -2340 170 {lab=VB}
-N -2500 20 -2500 160 {lab=I_Bais}
 N -2150 -130 -2150 10 {lab=VDD}
 N -2340 -130 -2150 -130 {lab=VDD}
 N -1660 -130 -1660 20 {lab=VDD}
 N -1420 -70 -1240 -70 {lab=VCORE}
 N -1830 -70 -1420 -70 {lab=VCORE}
-N -1660 310 -1420 310 {lab=VSS}
 N -1420 310 -1240 310 {lab=VSS}
 N -1240 310 -1050 310 {lab=VSS}
-N -2500 310 -2340 310 {lab=VSS}
 N -2500 200 -2500 310 {lab=VSS}
 N -1690 270 -1200 270 {lab=F_RST}
-N -1610 90 -1480 90 {lab=OP_OUT}
+N -2460 200 -2380 200 {lab=I_Bais}
 N -2150 -130 -1660 -130 {lab=VDD}
 N -2250 -50 -1700 -50 {lab=VB}
+N -1660 310 -1420 310 {lab=VSS}
+N -1610 90 -1480 90 {lab=OP_OUT}
+N -2500 310 -2340 310 {lab=VSS}
+N -2500 20 -2500 160 {lab=I_Bais}
 C {iopin.sym} -1660 -130 3 0 {name=p1 lab=VDD}
 C {iopin.sym} -1240 -70 3 0 {name=p2 lab=VCORE}
 C {iopin.sym} -840 180 0 0 {name=p3 lab=RESET}

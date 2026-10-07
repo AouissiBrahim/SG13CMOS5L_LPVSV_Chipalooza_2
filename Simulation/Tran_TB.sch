@@ -131,7 +131,7 @@ C {lab_pin.sym} -1110 -790 0 0 {name=p14 sig_type=std_logic lab=VSS}
 C {gnd.sym} -1110 -690 0 0 {name=l1 lab=0}
 C {lab_pin.sym} -1070 -140 0 1 {name=p10 sig_type=std_logic lab=VSS
 spice_ignore=true}
-C {vsource.sym} -1580 -60 0 0 {name=Vin4 value="pwl(0 0 10m 1.2 20m 1.2 20.1m 0.9 20.2m 1.2 30m 1.2 40m 0.7 50m 0.7 50.1m 1.2 55m 1.2 55.1m 0.7 60m 0.7 61m 0 70m 0 70.1m 1.2 70.2m 0 80m 0 100m 1)"
+C {vsource.sym} -1440 -40 0 0 {name=Vin4 value="pwl(0 0 10m 1.2 20m 1.2 20.1m 0.9 20.2m 1.2 30m 1.2 40m 0.7 50m 0.7 50.1m 1.2 55m 1.2 55.1m 0.7 60m 0.7 61m 0 70m 0 70.1m 1.2 70.2m 0 80m 0 100m 1)"
 savecurrent=false
 spice_ignore=true}
 C {devices/launcher.sym} -1320 -920 0 0 {name=h5
