@@ -22,7 +22,7 @@ C {code_shown.sym} -1900 -529.0983898104131 0 0 {name=s2 only_toplevel=false
 value="
 .options temp = 27
 .param VDD = 3.3
-.param I_Bais = 0
+.param I_Bais = 1u
 .include DC_TB.save
 .save all
 .control
