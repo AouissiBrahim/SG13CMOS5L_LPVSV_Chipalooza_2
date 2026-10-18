@@ -19,19 +19,25 @@ The ***LPVSV*** assert the ***RESET*** during startup until the ***1V2*** reac
 
 | **Parameter**       | **Symbol**   | **Min** | **Typ** | **Max** | **Unit** |
 | :-: | :-: | :-: | :-: | :-: | :-: |
-| Supply Voltage        | ***VDD***    | 2.7     | 3.3     | 3.6     | V  |
-| Temperature           | ***T***      | -40     | 27      | 125     | °C |
-| Monitored Voltage     | ***VCORE***  | 0       | 1.2     | 1.3     | V  |
-| Power-On Threshold    | ***Vth\_H*** | 1.02    | 1.08    | 1.14    | V  |
-| Brown-Out Threshold   | ***Vth\_L*** | 0.94    | 1       | 1.06    | V  |
-| Hysteresis            | ***HYS***    | 50      | 80      | 100     | mV |
-| Threshold Accurancy   | ***TH\_AC*** | -       | ±5      | ±7.5    | %  |
-| Quiescent Current ON  | ***IQ\_ON*** | -       | 5       | 10      | uA | 
-| Quiescent Current OFF | ***IQ\_OFF***| -       | 5       | 10      | uA |
-| Short Glitches        | ***SG***     | -       | 1       | 2       | uS |
-| Reset Delay           | ***Delay***  | ***3*** | ***5*** | ***6*** | mS |
+| Supply Voltage        | ***VDD***    | 2.7	| 3.3	| 3.6	| V  |
+| Temperature           | ***T***      | -40	| 27	| 125	| °C |
+| Monitored Voltage     | ***VCORE***  | 0	| 1.2	| 1.3	| V  |
+| Power-On Threshold    | ***Vth\_H*** | 1.02	| 1.08	| 1.14	| V  |
+| Brown-Out Threshold   | ***Vth\_L*** | 0.94	| 1	| 1.06	| V  |
+| Hysteresis            | ***HYS***    | 50	| 80	| 100	| mV |
+| Threshold Accurancy   | ***TH\_AC*** | -	| ±5	| ±7.5	| %  |
+| Quiescent Current ON  | ***IQ\_ON*** | -	| 5	| 10	| uA | 
+| Quiescent Current OFF | ***IQ\_OFF***| -	| 5	| 10	| uA |
+| Short Glitches        | ***SG***     | -	| 1	| 2	| uS |
+| Reset Delay           | ***Delay***  | 3	| 5	| 6	| mS |
 
 ### Pre-Layout Simulation :
+Pre-Layout Simulation
+
+Pre-layout simulations were performed using Xschem and NGSpice to verify circuit functionality and evaluate electrical performance before layout. Process, Voltage, and Temperature (PVT) corner simulations and Monte Carlo analysis were conducted to assess circuit robustness against process variations and operating conditions. The simulation schematics and results are available in the Simulation directory:
+```text
+Simulation
+```
 **DC Tests:**  
 **Monte Carlo 1000 runs:**
 
@@ -93,6 +99,13 @@ The ***LPVSV*** assert the ***RESET*** during startup until the ***1V2*** reac
 |                  | **Min** | **400**   | **-40** | **3.6** | **1.02** | **FF** | **FF** |
 
 ### Post-Layout Simulation :
+
+The circuit layout was designed using KLayout with the IHP SG13G2 130 nm technology. The layout GDS file is available at:
+```text
+GDS/LPVSV_Pex.gds
+```
+Post-layout simulations were performed using the extracted layout parasitics (PEX) to evaluate circuit performance and verify functionality after layout.
+
 **DC Tests:**  
 **Monte Carlo 1000 runs:**
 
@@ -153,5 +166,28 @@ The ***LPVSV*** assert the ***RESET*** during startup until the ***1V2*** reac
 | ***SG (nS)***    | **Max** | **550**   | **125** | **2.7** | **0.98** | **SS** | **SS** |
 |                  | **Min** | **400**   | **-40** | **3.6** | **1.02** | **FF** | **FF** |
 
+
+### Chipalooza Integration:
+
+This project is assigned to **slot 17** of the IHP SG13CMOS5L Chipalooza test chip. The standalone LPVSV (Low-Power Voltage Supervisor) layout is intended to remain reusable as an independent IP macro. The Chipalooza slot wrapper instantiates the LPVSV macro and provides the required interface to the test-chip harness.
+
+The harness integration expects the final slot layout at: 
+```text
+GDS/slot_17.gds
+```
+
+### Slot-16 Signal Mapping:
+
+**List of Inputs and Outputs**
+
+|Chipalooza Harness|LPVSV	|Type	|Function						|
+|VDD_3V3	   |VDD		|Supply |3.3 V supply for the LPVSV				|
+|VSS_3V3	   |VSS		|Supply |Ground reference for the LPVSV				|
+|VDD_1V2	   |VCORE	|Input 	|Voltage-monitoring input				|
+|ibais0	           |I_Bais	|Input	|1 µA bias-current reference				|
+|s17_an[0]	   |F_RST	|Output	|Immediate active-high reset signal, without delay	|
+|s17_an[1]         |RST		|Output |Delayed active-high reset signal			|
+
+**Note:** Both F_RST and RST are active-high outputs. They are asserted when their logic level is HIGH (1) and deasserted when their logic level is LOW (0).
 
 
