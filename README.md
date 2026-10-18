@@ -181,12 +181,13 @@ GDS/slot_17.gds
 **List of Inputs and Outputs**
 
 |Chipalooza Harness|LPVSV	|Type	|Function						|
-|VDD_3V3	   |VDD		|Supply |3.3 V supply for the LPVSV				|
-|VSS_3V3	   |VSS		|Supply |Ground reference for the LPVSV				|
-|VDD_1V2	   |VCORE	|Input 	|Voltage-monitoring input				|
-|ibais0	           |I_Bais	|Input	|1 µA bias-current reference				|
-|s17_an[0]	   |F_RST	|Output	|Immediate active-high reset signal, without delay	|
-|s17_an[1]         |RST		|Output |Delayed active-high reset signal			|
+| :-: | :-: | :-: | :-: | :-: | :-: |
+|**VDD_3V3**	   |**VDD**	|Supply |3.3 V supply for the LPVSV				|
+|**VSS_3V3**	   |**VSS**	|Supply |Ground reference for the LPVSV				|
+|**VDD_1V2**	   |**VCORE**	|Input 	|Voltage-monitoring input				|
+|**ibais0**	   |**I_Bais**	|Input	|1 µA bias-current reference				|
+|**s17_an[0]**	   |**F_RST**	|Output	|Immediate active-high reset signal, without delay	|
+|**s17_an[1]**     |**RST**	|Output |Delayed active-high reset signal			|
 
 **Note:** Both F_RST and RST are active-high outputs. They are asserted when their logic level is HIGH (1) and deasserted when their logic level is LOW (0).
 
