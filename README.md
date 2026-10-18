@@ -181,7 +181,7 @@ GDS/slot_17.gds
 **List of Inputs and Outputs**
 
 |Chipalooza Harness|LPVSV	|Type	|Function						|
-| :-: | :-: | :-: | :-: | :-: | :-: |
+| :-: | :-: | :-: | :-: |
 |**VDD_3V3**	   |**VDD**	|Supply |3.3 V supply for the LPVSV				|
 |**VSS_3V3**	   |**VSS**	|Supply |Ground reference for the LPVSV				|
 |**VDD_1V2**	   |**VCORE**	|Input 	|Voltage-monitoring input				|
