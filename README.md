@@ -176,7 +176,7 @@ The harness integration expects the final slot layout at:
 GDS/slot_17.gds
 ```
 
-### Slot-16 Signal Mapping:
+### Slot-17 Signal Mapping:
 
 **List of Inputs and Outputs**
 
